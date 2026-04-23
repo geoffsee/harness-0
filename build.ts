@@ -63,6 +63,12 @@ const entryScript = result.outputs
     .map((output) => basename(output.path))
     .find((path) => path.includes("index-") && path.endsWith(".js"));
 
+const stylesheets = result.outputs
+    .map((output) => basename(output.path))
+    .filter((path) => path.endsWith(".css"))
+    .map((path) => `<link rel="stylesheet" href="./${path}" />`)
+    .join("\n    ");
+
 const html = `<!doctype html>
 <html lang="en">
   <head>
@@ -70,6 +76,7 @@ const html = `<!doctype html>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="data:," />
     <title>Secure Mesh Network</title>
+    ${stylesheets}
     <style>
       :root {
         color-scheme: light;
