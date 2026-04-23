@@ -78,67 +78,18 @@ const html = `<!doctype html>
     <title>Secure Mesh Network</title>
     ${stylesheets}
     <style>
-      :root {
-        color-scheme: light;
-        --bg: #f5f0e8;
-        --panel: rgba(255, 252, 246, 0.9);
-        --ink: #17313e;
-        --accent: #0f766e;
-        --accent-soft: rgba(15, 118, 110, 0.12);
-        --warn: #9a3412;
-        --border: rgba(23, 49, 62, 0.16);
-      }
-      * { box-sizing: border-box; }
-      body {
+      html, body, #app {
         margin: 0;
-        font-family: "IBM Plex Sans", "Avenir Next", sans-serif;
-        color: var(--ink);
-        background:
-          radial-gradient(circle at top left, rgba(15, 118, 110, 0.25), transparent 32%),
-          radial-gradient(circle at bottom right, rgba(180, 83, 9, 0.18), transparent 28%),
-          var(--bg);
+        min-height: 100%;
       }
-      #app {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 32px 20px 64px;
+
+      body {
+        background: #081118;
       }
-      .shell {
-        display: grid;
-        gap: 18px;
+
+      * {
+        box-sizing: border-box;
       }
-      .hero, .panel {
-        background: var(--panel);
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 18px 60px rgba(23, 49, 62, 0.08);
-      }
-      .hero { padding: 24px; }
-      .hero h1 { margin: 0 0 10px; font-size: clamp(2rem, 5vw, 3.6rem); line-height: 0.95; }
-      .hero p { margin: 0; max-width: 60ch; }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 18px;
-      }
-      .panel { padding: 18px; }
-      h2 { margin: 0 0 12px; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; }
-      .statline { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
-      .chip {
-        padding: 6px 10px;
-        border-radius: 999px;
-        background: var(--accent-soft);
-        color: var(--accent);
-        font-size: 0.9rem;
-      }
-      ul { margin: 0; padding-left: 18px; }
-      li + li { margin-top: 8px; }
-      code {
-        font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
-        font-size: 0.92em;
-      }
-      .warn { color: var(--warn); }
     </style>
   </head>
   <body>
